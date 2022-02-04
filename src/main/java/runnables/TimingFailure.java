@@ -1,7 +1,8 @@
 package runnables;
 
 class Waiter implements Runnable {
-  public boolean stop = false;
+  // volatile ensures "visibility" (but nothing else!)
+  public /*volatile*/ boolean stop = false;
 
   @Override
   public void run() {
